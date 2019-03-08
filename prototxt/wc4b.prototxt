@@ -1,0 +1,38 @@
+  }
+  blobs_lr: 1
+  blobs_lr: 2
+  weight_decay: 1
+  weight_decay: 0
+  convolution_param {
+    num_output: 512
+    pad: 1
+    kernel_size: 3
+    kernel_depth: 3
+    weight_filler {
+      type: "gaussian"
+      std: 0.01
+    }
+    bias_filler {
+      type: "constant"
+      value: 1
+    }
+    temporal_pad: 1
+  }
+}
+layers {
+  bottom: "conv4a"
+  top: "conv4a"
+  name: "relu4a"
+  type: RELU
+}
+layers {
+  bottom: "conv4a"
+  top: "conv4b"
+  name: "conv4b"
+  type: VIDEO_DATA
+  blobs {
+    num: 512
+    channels: 512
+    length: 3
+    height: 3
+    width: 3

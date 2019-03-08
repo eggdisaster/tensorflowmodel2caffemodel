@@ -1,0 +1,20 @@
+name: "DeepConv3DNet_UCF101_Finetuning"
+layers {
+  name: "data"
+  type: VIDEO_DATA
+  top: "data"
+  top: "label"
+  image_data_param {
+    source: "/home/liuwang/C3D/C3D-v1.0/examples/c3d_feature_extraction/prototxt/input_list_frm_train_ucf101.txt"
+    use_image: true
+    mean_file: "/home/liuwang/C3D/C3D-v1.0/examples/c3d_feature_extraction/sport1m_train16_128_mean.binaryproto"
+    batch_size: 50
+    crop_size: 112
+    mirror: false
+    show_data: 0
+    new_height: 128
+    new_width: 171
+    new_length: 16
+    shuffle: false
+  }
+}

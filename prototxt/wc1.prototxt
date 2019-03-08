@@ -1,0 +1,11 @@
+layers {
+  bottom: "data"
+  top: "conv1a"
+  name: "conv1a"
+  type: VIDEO_DATA
+  blobs {
+    num: 64
+    channels: 3
+    length: 3
+    height: 3
+    width: 3

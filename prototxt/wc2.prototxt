@@ -1,0 +1,51 @@
+  }
+  blobs_lr: 1
+  blobs_lr: 2
+  weight_decay: 1
+  weight_decay: 0
+  convolution_param {
+    num_output: 64
+    pad: 1
+    kernel_size: 3
+    kernel_depth: 3
+    weight_filler {
+      type: "gaussian"
+      std: 0.01
+    }
+    bias_filler {
+      type: "constant"
+      value: 0
+    }
+    temporal_pad: 1
+  }
+}
+layers {
+  bottom: "conv1a"
+  top: "conv1a"
+  name: "relu1a"
+  type: RELU
+}
+layers {
+  bottom: "conv1a"
+  top: "pool1"
+  name: "pool1"
+  type: DECONVOLUTION3D
+  pooling_param {
+    pool: MAX
+    kernel_size: 2
+    stride: 2
+    kernel_depth: 1
+    temporal_stride: 1
+  }
+}
+layers {
+  bottom: "pool1"
+  top: "conv2a"
+  name: "conv2a"
+  type: VIDEO_DATA
+  blobs {
+    num: 128
+    channels: 64
+    length: 3
+    height: 3
+    width: 3

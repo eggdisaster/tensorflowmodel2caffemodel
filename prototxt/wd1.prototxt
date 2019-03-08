@@ -1,0 +1,51 @@
+  }
+  blobs_lr: 1
+  blobs_lr: 2
+  weight_decay: 1
+  weight_decay: 0
+  convolution_param {
+    num_output: 512
+    pad: 1
+    kernel_size: 3
+    kernel_depth: 3
+    weight_filler {
+      type: "gaussian"
+      std: 0.01
+    }
+    bias_filler {
+      type: "constant"
+      value: 1
+    }
+    temporal_pad: 1
+  }
+}
+layers {
+  bottom: "conv5b"
+  top: "conv5b"
+  name: "relu5b"
+  type: RELU
+}
+layers {
+  bottom: "conv5b"
+  top: "pool5"
+  name: "pool5"
+  type: DECONVOLUTION3D
+  pooling_param {
+    pool: MAX
+    kernel_size: 2
+    stride: 2
+    kernel_depth: 2
+    temporal_stride: 2
+  }
+}
+layers {
+  bottom: "pool5"
+  top: "fc6-1"
+  name: "fc6-1"
+  type: INNER_PRODUCT
+  blobs {
+    num: 1
+    channels: 1
+    length: 1
+    height: 4096
+    width: 8192

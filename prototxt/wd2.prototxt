@@ -1,0 +1,43 @@
+  }
+  blobs_lr: 1
+  blobs_lr: 2
+  weight_decay: 1
+  weight_decay: 0
+  inner_product_param {
+    num_output: 4096
+    weight_filler {
+      type: "gaussian"
+      std: 0.005
+    }
+    bias_filler {
+      type: "constant"
+      value: 1
+    }
+  }
+}
+layers {
+  bottom: "fc6-1"
+  top: "fc6-1"
+  name: "relu6"
+  type: RELU
+}
+layers {
+  bottom: "fc6-1"
+  top: "fc6-1"
+  name: "drop6"
+  type: DROPOUT
+  dropout_param {
+    dropout_ratio: 0.5
+  }
+}
+layers {
+  bottom: "fc6-1"
+  top: "fc7-1"
+  name: "fc7-1"
+  type: INNER_PRODUCT
+  blobs {
+    num: 1
+    channels: 1
+    length: 1
+    height: 4096
+    width: 4096
