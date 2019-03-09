@@ -103,9 +103,9 @@ $ bash ss.sh
 ```
 
 ## Transfer model.prototxt to caffe.caffemodel
-- Replace all the 'read_model' by 'write_model' in `CMakeLists.txt`.
-- Change 'include_directories' to your Caffe path.
-- run
+    - Replace all the 'read_model' by 'write_model' in `CMakeLists.txt`.
+    - Change 'include_directories' to your Caffe path.
+    - run
 ```
 $ cmake .
 $ make
@@ -114,5 +114,5 @@ $ ./write_model
 
 
 ## References:
-- Read and save tensorflow var name and value. https://blog.csdn.net/wc781708249/article/details/78040735
 - Read and write caffemodel. https://blog.csdn.net/jiongnima/article/details/72904526
+- Read and save tensorflow var name and value. https://blog.csdn.net/wc781708249/article/details/78040735
