@@ -12,9 +12,8 @@ Download C3D-tensorflow finetuning model [c3d_ucf_model-3999](https://www.dropbo
 
 
 ## Read tensor values from tensorflow model
-1.Copy the tensorflow finetuning model (including .data .index, .meta, checkpoint) into `./tfmodel/`.
-
-2.Run `read_tfmodel.py`.
+1. Copy the tensorflow finetuning model (including .data .index, .meta, checkpoint) into `./tfmodel/`.
+2. Run `read_tfmodel.py`.
 
 Tensor's values will be saved in `./prototxt/` respectively like this:
 ```
