@@ -11,7 +11,7 @@ Our model is finetuned from [sports1m_finetuning_ucf101.model](https://www.dropb
 
 
 ## Read tensor values from tensorflow model
-- Copy the tensorflow finetuning model (including .data .index, .meta, checkpoint) into `./tfmodel/`.
+- Copy the tensorflow finetuning model (including .data, .index, .meta, checkpoint) to `./tfmodel/`.
 - Run `read_tfmodel.py`.
 
 Tensor's values will be saved in `./prototxt/` respectively like this:
@@ -36,8 +36,8 @@ $ make
 $ ./read_model
 ```
 - Note:
-    1.You can run `delete_data.py` to generate a smaller file without data.
-    2.Here we provide a example model without data as `conv3d_deepnetA_sport1m_iter_1900000_without_data.txt`
+    1. You can run `delete_data.py` to generate a smaller file without data.
+    2. Here we provide a example model without data as `conv3d_deepnetA_sport1m_iter_1900000_without_data.txt`
 
 2. Split the prototxt to insert data in order.
 
