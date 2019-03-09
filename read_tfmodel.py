@@ -2,7 +2,7 @@ import tensorflow as tf
 import numpy as np
 import os
 
-logdir = './7638/models/'
+logdir = './tfmodels/'
 savedir = './prototxt/'
 
 from tensorflow.python import pywrap_tensorflow
