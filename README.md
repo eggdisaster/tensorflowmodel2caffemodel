@@ -1,11 +1,14 @@
 # tensorflowmodel2caffemodel
 
-Install caffe and tensorflow is necessary.
+    This is a repository trying to convert tensorflow model to caffe model in 3D ConvNet.
+    Our model is finetuned from [sports1m_finetuning_ucf101.model](https://www.dropbox.com/sh/8wcjrcadx4r31ux/AAAkz3dQ706pPO8ZavrztRCca?dl=0) in [C3D-tensorflow](https://github.com/hx173149/C3D-tensorflow).
+    
 
-## Prepare prototxt and tensorflow model
-Download C3D-tensorflow finetuning model [c3d_ucf_model-3999](https://www.dropbox.com/sh/zxytvmis1o6ps3b/AACcAJRV6fO-Ol2UTOUVCwHZa?dl=0).
+## Requirements:
+    Install caffe and tensorflow is necessary.
 
-Our model is finetuned from [sports1m_finetuning_ucf101.model](https://www.dropbox.com/sh/8wcjrcadx4r31ux/AAAkz3dQ706pPO8ZavrztRCca?dl=0) in [C3D-tensorflow](https://github.com/hx173149/C3D-tensorflow).
+    Download C3D-tensorflow finetuning model [c3d_ucf_model-3999](https://www.dropbox.com/sh/zxytvmis1o6ps3b/AACcAJRV6fO-Ol2UTOUVCwHZa?dl=0).
+
 
 
 ## Read tensor values from tensorflow model
