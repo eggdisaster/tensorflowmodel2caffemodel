@@ -48,7 +48,7 @@ layers {
     width: 3
 ```
 data_weight.prototxt
-```
+
 ```
     data: 0.8835785389
     ...
