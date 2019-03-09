@@ -4,6 +4,7 @@ This is a repository trying to convert tensorflow model to caffe model in 3D Con
 Our model is finetuned from [sports1m_finetuning_ucf101.model](https://www.dropbox.com/sh/8wcjrcadx4r31ux/AAAkz3dQ706pPO8ZavrztRCca?dl=0) in [C3D-tensorflow](https://github.com/hx173149/C3D-tensorflow).
 
 
+
 ## Requirements:
 - Install caffe and tensorflow is necessary.
 - Prepare a tensorflow model or download our [c3d_ucf_model-3999](https://www.dropbox.com/sh/zxytvmis1o6ps3b/AACcAJRV6fO-Ol2UTOUVCwHZa?dl=0) finetuning model.
@@ -23,13 +24,15 @@ Tensor's values will be saved in `./prototxt/` respectively like this:
     data: 0.9576351643
 ```
 
-## Prepare the model.prototxt
+
+
+## Prepare the caffemodel.prototxt
 If you are familiar with caffe and prepare the prototxt by yourself, please skip first step.
 
-1. Read caffe model from [conv3d_deepnetA_sport1m_iter_1900000](https://www.dropbox.com/s/mihrgqarchxd643/conv3d_deepnetA_sport1m_iter_1900000?dl=0).
-    - Replace all the 'write_model' by 'read_model' in `CMakeLists.txt`.
-    - Change 'include_directories' to your Caffe path.
-    - run
+1. Read caffemodel.prototxt from [conv3d_deepnetA_sport1m_iter_1900000](https://www.dropbox.com/s/mihrgqarchxd643/conv3d_deepnetA_sport1m_iter_1900000?dl=0).
+- Replace all the 'write_caffemodel' by 'read_caffemodel' in `CMakeLists.txt`.
+- Change 'include_directories' to your Caffe path.
+- run
 ```
 $ cmake .
 $ make
@@ -41,6 +44,7 @@ $ ./read_model
 
 2. Split the prototxt to insert data in order.
 
+Like an example for spliting layer1.
 ```
 # layer1_part1.prototxt
 layers {
@@ -97,20 +101,23 @@ layers {
 
 3. Record the index one by one in `index.txt`.
 
-4. Concatenate the prototxt file by running
+4. Concatenate the prototxt files
 ```
 $ bash ss.sh
 ```
 
-## Transfer model.prototxt to caffe.caffemodel
-    - Replace all the 'read_model' by 'write_model' in `CMakeLists.txt`.
-    - Change 'include_directories' to your Caffe path.
-    - run
+
+
+## Write caffemodel.prototxt into caffemodel.caffemodel
+- Replace all the 'read_caffemodel' by 'write_caffemodel' in `CMakeLists.txt`.
+- Change 'include_directories' to your Caffe path.
+- run
 ```
 $ cmake .
 $ make
 $ ./write_model
 ```
+
 
 
 ## References:

@@ -2,5 +2,5 @@
  
 cat ./prototxt/index.txt |while read line
 do
-cat $line >>model.prototxt
+cat $line >>caffemodel.prototxt
 done

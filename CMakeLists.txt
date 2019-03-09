@@ -1,8 +1,8 @@
 cmake_minimum_required (VERSION 2.8)
 
-project (write_model)
+project (write_caffemodel)
 
-add_executable(write_model write_model.cpp)
+add_executable(write_caffemodel write_caffemodel.cpp)
 
 include_directories ( /home/dell/C3D/C3D-v1.0/include
     /usr/local/include
