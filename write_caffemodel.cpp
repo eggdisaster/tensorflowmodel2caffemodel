@@ -27,8 +27,8 @@ using google::protobuf::Message;
 int main()
 {
 	NetParameter proto;
-	ReadProtoFromTextFile("/home/dell/PycharmProjects/tensorflow2caffemodel/model.prototxt", &proto);
-	WriteProtoToBinaryFile(proto, "/home/dell/PycharmProjects/tensorflow2caffemodel/model.caffemodel");
+	ReadProtoFromTextFile("/home/dell/PycharmProjects/tensorflowmodel2caffemodel/caffemodel.prototxt", &proto);
+	WriteProtoToBinaryFile(proto, "/home/dell/PycharmProjects/tensorflowmodel2caffemodel/caffemodel.caffemodel");
 	return 0;
 }
 

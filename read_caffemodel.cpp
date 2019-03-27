@@ -27,8 +27,8 @@ using google::protobuf::Message;
 int main()
 {
 	NetParameter proto;
-	ReadProtoFromBinaryFile("/home/dell/PycharmProjects/tensorflow2caffemodel/conv3d_deepnetA_sport1m_iter_1900000", &proto);
-	WriteProtoToTextFile(proto, "/home/dell/PycharmProjects/tensorflow2caffemodel/conv3d_deepnetA_sport1m_iter_1900000.txt");
+	ReadProtoFromBinaryFile("/home/dell/PycharmProjects/tensorflowmodel2caffemodel/conv3d_deepnetA_sport1m_iter_1900000", &proto);
+	WriteProtoToTextFile(proto, "/home/dell/PycharmProjects/tensorflowmodel2caffemodel/conv3d_deepnetA_sport1m_iter_1900000.txt");
 	return 0;
 }
 

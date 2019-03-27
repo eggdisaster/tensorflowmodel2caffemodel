@@ -11,7 +11,7 @@ include_directories ( /home/dell/C3D/C3D-v1.0/include
     /usr/include/hdf5/serial/
     )
 
-target_link_libraries(write_model
+target_link_libraries(write_caffemodel
     /home/dell/C3D/C3D-v1.0/build/lib/libcaffe.so
     /usr/lib/x86_64-linux-gnu/libglog.so
     /usr/lib/x86_64-linux-gnu/libboost_system.so
